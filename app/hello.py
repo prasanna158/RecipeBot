@@ -23,7 +23,7 @@ def home():
         "source":"dialogflowResponse"
             }, indent=4)
     r = make_response(res)
-
+    return r
 
 if __name__ == '__main__':
     app.run(debug=True)

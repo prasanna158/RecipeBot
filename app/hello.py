@@ -1,5 +1,4 @@
 from flask import Flask,request
-
 import json
 
 app = Flask(__name__)
@@ -14,6 +13,17 @@ def home():
     req = request.get_json(silent=True,force=True)
     print("hello")
     print(json.dumps(req,indent =4))
+
+    speech="testdata"
+    
+
+    res = json.dumps({
+        "speech":speech,
+        "displayText":speech,
+        "source":"dialogflowResponse"
+            }, indent=4)
+    r = make_response(res)
+
 
 if __name__ == '__main__':
     app.run(debug=True)

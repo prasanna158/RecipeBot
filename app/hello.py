@@ -11,7 +11,9 @@ def home():
     recipe = req.get("result").get("parameters").get("recipe")
     response = requests.get("https://api.edamam.com/search?q="+ recipe+"&app_id=609ddfda&app_key=3b418fd7c775e74b7bf933b67b8b645f&from=0&to=3")
     res = response.json()
-    speech=res.get("hits")[0].get("recipe").get("url")
+    for x in range (0,3)
+        speech=res.get("hits")[x].get("recipe").get("url")
+        
     resul = json.dumps({
         "speech":speech,
         "displayText":speech,
